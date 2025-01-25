@@ -1,7 +1,6 @@
 package com.jpdev.gamelist.dto;
 
-import com.jpdev.gamelist.entities.GameEntity;
-import jakarta.persistence.Column;
+import com.jpdev.gamelist.entities.Game;
 
 public class GameMinDTO {
 
@@ -13,7 +12,7 @@ public class GameMinDTO {
 
     public GameMinDTO(){}
 
-    public GameMinDTO(GameEntity entity) {
+    public GameMinDTO(Game entity) {
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();
