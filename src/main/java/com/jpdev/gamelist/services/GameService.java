@@ -1,5 +1,6 @@
 package com.jpdev.gamelist.services;
 
+import com.jpdev.gamelist.dto.GameDTO;
 import com.jpdev.gamelist.dto.GameMinDTO;
 import com.jpdev.gamelist.entities.Game;
 import com.jpdev.gamelist.repositories.GameRepository;
@@ -13,6 +14,12 @@ public class GameService {
 
     @Autowired
     private GameRepository gameRepository;
+
+    public GameDTO findById(Long id){
+        Game result = gameRepository.findById(id).get();
+        return new GameDTO(result);
+
+    }
 
     public List<GameMinDTO> findAll(){
         List<Game> result = gameRepository.findAll();
